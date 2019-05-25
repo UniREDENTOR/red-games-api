@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   namespace :api do
     get 'photos', to: 'photos#index'
+
+    get 'days', to: 'days#index'
+    get 'days/:id', to: 'days#show'
   end
 
   devise_for :users

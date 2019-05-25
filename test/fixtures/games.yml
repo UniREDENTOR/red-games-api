@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  description: MyText
+  time: 2019-05-25 12:09:30
+  locale: MyString
+  edital: MyString
+  information: MyText
+  day: one
+
+two:
+  name: MyString
+  description: MyText
+  time: 2019-05-25 12:09:30
+  locale: MyString
+  edital: MyString
+  information: MyText
+  day: two

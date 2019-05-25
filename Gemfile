@@ -10,6 +10,7 @@ gem 'rails_admin'
 gem "aws-sdk-s3", require: false
 gem 'carrierwave', '~> 1.0'
 gem 'fog-aws'
+gem 'mini_magick'
 
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
