@@ -6,6 +6,8 @@ Rails.application.routes.draw do
     get 'days/:id', to: 'days#show'
 
     get 'teams', to: 'teams#index'
+
+    get 'ranking', to: 'ranks#index'
   end
 
   devise_for :users

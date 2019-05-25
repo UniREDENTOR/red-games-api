@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_25_170052) do
+ActiveRecord::Schema.define(version: 2019_05_25_175341) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -62,6 +62,16 @@ ActiveRecord::Schema.define(version: 2019_05_25_170052) do
     t.index ["day_id"], name: "index_games_on_day_id"
   end
 
+  create_table "scores", force: :cascade do |t|
+    t.float "amount"
+    t.bigint "team_id"
+    t.bigint "game_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["game_id"], name: "index_scores_on_game_id"
+    t.index ["team_id"], name: "index_scores_on_team_id"
+  end
+
   create_table "teams", force: :cascade do |t|
     t.string "logo"
     t.string "name"
@@ -87,4 +97,6 @@ ActiveRecord::Schema.define(version: 2019_05_25_170052) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "games", "days"
+  add_foreign_key "scores", "games"
+  add_foreign_key "scores", "teams"
 end

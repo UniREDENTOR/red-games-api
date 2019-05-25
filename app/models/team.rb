@@ -1,4 +1,6 @@
 class Team < ApplicationRecord
+  has_many :scores
+
   mount_uploader :logo, LogoUploader
 
   validates_presence_of :logo, :name,
@@ -11,5 +13,9 @@ class Team < ApplicationRecord
     field :leader
     field :members
     field :participations
+  end
+
+  def total_score
+    scores.sum(:amount)
   end
 end
