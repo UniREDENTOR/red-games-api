@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  team: one
+  event: one
+  amount: 1
+  uuid: MyString
+
+two:
+  team: two
+  event: two
+  amount: 1
+  uuid: MyString

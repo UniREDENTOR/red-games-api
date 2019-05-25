@@ -1,6 +1,9 @@
 class Team < ApplicationRecord
   has_many :scores
 
+  has_many :event_scores
+  has_many :events, through: :event_scores
+
   mount_uploader :logo, LogoUploader
 
   validates_presence_of :logo, :name,

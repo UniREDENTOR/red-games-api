@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_25_175341) do
+ActiveRecord::Schema.define(version: 2019_05_25_191214) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,6 +38,27 @@ ActiveRecord::Schema.define(version: 2019_05_25_175341) do
 
   create_table "days", force: :cascade do |t|
     t.date "date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "event_scores", force: :cascade do |t|
+    t.bigint "team_id"
+    t.bigint "event_id"
+    t.integer "amount"
+    t.string "uuid"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["event_id"], name: "index_event_scores_on_event_id"
+    t.index ["team_id"], name: "index_event_scores_on_team_id"
+    t.index ["uuid"], name: "index_event_scores_on_uuid", unique: true
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.datetime "start_at"
+    t.datetime "end_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -96,6 +117,8 @@ ActiveRecord::Schema.define(version: 2019_05_25_175341) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "event_scores", "events"
+  add_foreign_key "event_scores", "teams"
   add_foreign_key "games", "days"
   add_foreign_key "scores", "games"
   add_foreign_key "scores", "teams"

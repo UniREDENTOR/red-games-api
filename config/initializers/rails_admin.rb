@@ -38,4 +38,8 @@ RailsAdmin.config do |config|
     # history_index
     # history_show
   end
+
+  config.model 'EventScore' do
+    visible false
+  end
 end

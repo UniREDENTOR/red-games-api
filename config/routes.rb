@@ -8,6 +8,10 @@ Rails.application.routes.draw do
     get 'teams', to: 'teams#index'
 
     get 'ranking', to: 'ranks#index'
+
+    get 'events', to: 'events#index'
+    get 'events/:id', to: 'events#teams'
+    post 'events/:event_id/:team_id', to: 'events#vote'
   end
 
   devise_for :users
