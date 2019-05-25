@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
     get 'days', to: 'days#index'
     get 'days/:id', to: 'days#show'
+
+    get 'teams', to: 'teams#index'
   end
 
   devise_for :users

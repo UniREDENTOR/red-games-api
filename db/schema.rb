@@ -61,6 +61,18 @@ ActiveRecord::Schema.define(version: 2019_05_25_170052) do
     t.datetime "updated_at", null: false
     t.index ["day_id"], name: "index_games_on_day_id"
   end
+
+  create_table "teams", force: :cascade do |t|
+    t.string "logo"
+    t.string "name"
+    t.text "description"
+    t.string "leader"
+    t.text "members"
+    t.integer "participations"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
