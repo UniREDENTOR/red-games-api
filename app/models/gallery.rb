@@ -1,8 +1,12 @@
 class Gallery < ApplicationRecord
-  mount_uploader :image
+  mount_uploader :image, ImageUploader
 
   before_save do
-    self.order = self.class.last.order + 1 if order.nil?
+    if self.class.last
+      self.order = self.class.last.order + 1 if order.nil?
+    else
+      self.order = 1
+    end
   end
 
   rails_admin do
