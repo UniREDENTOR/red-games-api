@@ -23,6 +23,6 @@ class Team < ApplicationRecord
   end
 
   def avg_event_score
-    event_scores.sum(&:amount) / event_scores.count
+    event_scores.sum(&:amount) / event_scores.count if event_scores.any?
   end
 end
