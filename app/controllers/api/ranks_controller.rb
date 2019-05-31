@@ -1,5 +1,5 @@
 class Api::RanksController < ApplicationController
   def index
-    @ranks = Team.includes(:scores).sort_by(&:total_score)
+    @ranks = Team.includes(:scores).sort_by(&:total_score).reverse!
   end
 end
