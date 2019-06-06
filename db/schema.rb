@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_25_191214) do
+ActiveRecord::Schema.define(version: 2019_06_06_015944) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,7 +51,6 @@ ActiveRecord::Schema.define(version: 2019_05_25_191214) do
     t.datetime "updated_at", null: false
     t.index ["event_id"], name: "index_event_scores_on_event_id"
     t.index ["team_id"], name: "index_event_scores_on_team_id"
-    t.index ["uuid"], name: "index_event_scores_on_uuid", unique: true
   end
 
   create_table "events", force: :cascade do |t|
