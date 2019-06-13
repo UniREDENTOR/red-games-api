@@ -10,6 +10,6 @@ class EventScore < ApplicationRecord
   validate :event_expired?
 
   def event_expired?
-    return errors.add(:event, 'já expirou') unless event.active?
+    return errors.add(:event, 'já expirou') unless event && event.active?
   end
 end
