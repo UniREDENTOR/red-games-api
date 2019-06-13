@@ -24,9 +24,13 @@ class Team < ApplicationRecord
 
   def avg_event_score(event_id)
     scores = event_scores.by_event(event_id)
-    
+
     return 0 if scores.empty?
 
     scores.sum(&:amount) / scores.count
+  end
+
+  def votes(event_id)
+    event_scores.by_event(event_id)
   end
 end
