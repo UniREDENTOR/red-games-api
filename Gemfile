@@ -8,7 +8,7 @@ gem 'rails', '~> 5.2.3'
 gem 'devise'
 gem 'rails_admin'
 gem "aws-sdk-s3", require: false
-gem 'carrierwave', '~> 1.0'
+gem 'carrierwave', '~> 1.3'
 gem 'fog-aws'
 gem 'mini_magick'
 gem 'rails-i18n', '~> 5.1'
